@@ -1000,13 +1000,11 @@ input {
 }
 
 input, .widget.profile form fieldset input, .widget.tweet a, .widget.ecombasket .ecombasket-pull, .widget.ecombasket .ecombasket-pull p, .widget.paypalbuynow .widget.button.paypal, a.checkout-empty-link, button {
-	margin-left: 6px;
 	color: darken(@color-swatch2, 50%);
-	border: 2px solid darken(@color-swatch2, 50%);
 	background-color: @color-swatch1;
 	border-radius: 0;
+	height: 49px;
 	&:hover {
-    	border: 2px solid @color-swatch3;
     	background-color: white;
     }
 }
@@ -1030,7 +1028,6 @@ input.blog-search-input, .widget.signupform input, .widget.profile form fieldset
 		@media @mobile {
 			.border-radius(4px);
 			display: inline-block;
-			margin-left: -4px;
 			width: 25%;
 			vertical-align: top;
 		}
@@ -1067,7 +1064,6 @@ textarea {
             }
         }
         button.btn {
-        	margin-top: 10px;
         	color: darken(@color-swatch2, 50%);
         	border: 2px solid darken(@color-swatch2, 50%);
         	background-color: @color-swatch1;
