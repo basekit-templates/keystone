@@ -1,7 +1,7 @@
 {
     "name":"Keystone",
     "thumbnail":"keystone.png",
-    "screenshot":"keystone.png",
+    "screenshot":"keystone-screenshot.jpg",
     "templateType":"standard",
     "pageTypes": ["home"],
     "tags": {
