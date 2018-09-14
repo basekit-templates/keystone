@@ -1151,11 +1151,12 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 /* 10. Forms */
 
 input, textarea {
-	border: 1px solid darken(@color-swatch7, 2%);
+	border: 2px solid darken(@color-swatch2, 2%);
+    color: darken(@color-swatch2, 50%);
 	text-indent: 8px;
 	-webkit-appearance: none;
 	&:hover, &:focus {
-		border: 1px solid darken(@color-swatch7, 10%)!important;
+		border: 2px solid darken(@color-swatch2, 6%);
 		transition: ease .5s border!important;
 	}
 }
@@ -1163,8 +1164,6 @@ input, textarea {
 input {
 	@media @mobile {
 		width: 75%;
-	}
-	+ button.btn {
 	}
 }
 
@@ -1185,9 +1184,6 @@ input, .widget.profile form fieldset input, .widget.ecombasket .ecombasket-pull,
 	background-color: @color-swatch1;
 	border-radius: 0;
 	height: 49px;
-	&:hover {
-    	background-color: white;
-    }
 }
 
 .widget.profile form button {
@@ -1260,6 +1256,7 @@ textarea {
     		margin: 16px 0 8px;
     	}
         input, textarea {
+            background-color: @color-swatch1;
             border: 2px solid darken(@color-swatch2, 2%);
             border-radius: 0;
             &.email {
@@ -1274,7 +1271,6 @@ textarea {
         	background-color: @color-swatch1;
         	border-radius: 0;
         	 &:hover {
-            	background-color: @color-swatch1;
             	border: 2px solid lighten(@color-swatch3, 5%);
             }
         }
@@ -1283,11 +1279,10 @@ textarea {
         form {
             button {
                 position: relative;
-                left: -4px;
                 vertical-align: top;
             }
             fieldset input {
-                border: 1px solid darken(@color-swatch7, 2%);
+                border: 2px solid darken(@color-swatch2, 2%);
                 @media @mobile {
                 	width: 65%;
                 }
@@ -1306,7 +1301,7 @@ textarea {
             }
         }
         input {
-            border: 1px solid darken(@color-swatch7, 2%);
+            border: 2px solid darken(@color-swatch2, 2%);
             height: 50px;
             width: 50%;
             @media @tablet {
@@ -1323,7 +1318,7 @@ textarea {
         	display: block;
         }
         input {
-            border: 1px solid darken(@color-swatch7, 2%);
+            border: 2px solid darken(@color-swatch2, 2%);
             width: 65%;
         }
         button {
@@ -1378,14 +1373,14 @@ textarea {
 
 button.btn,
 .advancedcontactform fieldset button {
-        	color: darken(@color-swatch2, 50%);
-        	border: 2px solid darken(@color-swatch2, 50%);
-        	background-color: @color-swatch1;
-        	border-radius: 0;
-        	&:hover {
-            	border: 2px solid @color-swatch3;
-            	background-color: white;
-            }
+	color: darken(@color-swatch2, 50%);
+	border: 2px solid darken(@color-swatch2, 50%);
+	background-color: @color-swatch1;
+	border-radius: 0;
+
+	&:hover {
+    	border: 2px solid @color-swatch3;
+    }
 }
 
 h5 {
