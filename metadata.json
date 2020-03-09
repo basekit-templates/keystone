@@ -1,5 +1,6 @@
 {
     "name":"Keystone",
+    "versionTenCompatible": 1,
     "thumbnail":"keystone.png",
     "screenshot":"keystone-screenshot.jpg",
     "templateType":"standard",
