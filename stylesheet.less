@@ -158,8 +158,8 @@ body {
     	}
     }*/
     @media @mobile {
-    	right: -250px;
-    	width: 250px;
+    	right: -300px;
+    	width: 300px;
     }
 }
 
@@ -257,7 +257,7 @@ body {
 		outline: none;
 		.transition( all, 0.5s, ease);
 	    @media @mobile {
-	    	right: 270px;
+	    	right: 312px;
 	    	top: 16px;
 	    }
 	    &:hover {
@@ -302,7 +302,7 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 	.transition( all, 0.5s, ease);
     -webkit-backface-visibility: hidden;
     @media @mobile {
-    	right: 250px;
+    	right: 300px;
     }
 }
 
@@ -317,6 +317,29 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 	position: absolute;
 	right: 0;
 	.transition( all, 0.5s, ease);
+}
+
+// Moves the GDPR links to the sidebar
+.gdpr-footer {
+	display: none;
+}
+
+.menu-active + .gdpr-footer {
+	bottom: 0;
+	display: block;
+	position: absolute;
+	right: 0;
+	width: 320px;
+	z-index: 10000;
+
+	.gdpr-footer__link {
+		font-size: 12px;
+		padding: 16px 8px;
+	}
+
+	@media @mobile {
+		width: 300px;
+	}
 }
 
 
