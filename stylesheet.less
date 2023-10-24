@@ -20,13 +20,6 @@
 @tablet: ~"only screen and (max-width: 860px)";
 @mobile: ~"only screen and (max-width: 650px)";
 
-html,
-body,
-#wrap,
-.bk-pt-home,
-[data-role="main"] {
-    height: 100%;
-}
 
 /* 2. Mixins */
 
@@ -43,10 +36,35 @@ body,
 	-o-transition:      @prop @time @ease;
 }
 
+@nav-width: 320px;
+@nav-width-mobile: 300px;
+
 /* 3. Header & Navigation */
 
 body {
 	 background: @color-swatch1;
+	 overflow-x: hidden;
+	 width: 100%;
+}
+
+#wrap {
+	display: flex;
+	flex-wrap: nowrap;
+	margin-left: 0;
+	transition: all .5s ease;
+	width: calc(100% + @nav-width);
+
+	@media @mobile {
+		width: calc(100% + @nav-width-mobile);
+	}
+
+	&.menu-active {
+		margin-left: -@nav-width;
+
+		@media @mobile {
+			margin-left: -@nav-width-mobile;
+		}
+	}
 }
 
 .bk-pt-home {
@@ -130,36 +148,29 @@ body {
 
 .bk-nav {
 	background: @color-swatch3;
-	height: 100%;
-	position: fixed;
-	right: -320px;
-	width: 320px;
-	.transition( all, 0.5s, ease);
+	height: 100vh;
+	min-width: @nav-width;
+	order: 1;
+	position: sticky;
+	top: 0;
+	width: @nav-width;
+	.transition(all, .5s, ease);
     z-index: 9999;
+
+	@media only screen and (max-height: 450px) {
+		height: auto;
+	}
+
+    @media @mobile {
+    	right: -@nav-width-mobile;
+    	width: @nav-width-mobile;
+    }
+
     .widget.socialicons {
     	float: left;
     	padding: 30px 15px;
     	margin: 0;
     	width: 100%;
-    }
-	@media only screen and (max-height: 450px) {
-		height: auto;
-	}
-    /*&:after {
-    	@media only screen and (max-height: 450px) {
-    		background: @color-swatch6;
-			border-left: 1px solid black;
-			content: "";
-			display: block;
-			height: 100%;
-			right: 0;
-			width: 320px;
-			position: absolute;
-    	}
-    }*/
-    @media @mobile {
-    	right: -300px;
-    	width: 300px;
     }
 }
 
@@ -251,14 +262,13 @@ body {
 		display: inline-block;
 		width: 42px;
 		height: 38px;
-		/*text-indent: -900em;*/
 		overflow: hidden;
 		cursor: pointer;
 		outline: none;
 		.transition( all, 0.5s, ease);
 	    @media @mobile {
 	    	right: 312px;
-	    	top: 16px;
+	    	top: 12px;
 	    }
 	    &:hover {
 	    	background-color: fade(@color-swatch6, 25%);
@@ -293,32 +303,6 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 	display: block!important;
 }
 
-.menu-active .widget.extendednavigation#slide-menu {
-	right: 0px;
-}
-
-.menu-active #main, .menu-active .bk-header {
-	right: 320px;
-	.transition( all, 0.5s, ease);
-    -webkit-backface-visibility: hidden;
-    @media @mobile {
-    	right: 300px;
-    }
-}
-
-#main, .bk-header, .bk-pt-home #main .widget.feature.bk-tpl-hidden + .bk-header {
-	.transition( all, 0.5s, ease);
-	-webkit-backface-visibility: hidden;
-}
-
-.menu-active .bk-nav {
-	display: table;
-	height: 100%;
-	position: absolute;
-	right: 0;
-	.transition( all, 0.5s, ease);
-}
-
 // Moves the GDPR links to the sidebar
 .gdpr-footer {
 	display: none;
@@ -329,7 +313,7 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 	display: block;
 	position: absolute;
 	right: 0;
-	width: 320px;
+	width: @nav-width;
 	z-index: 10000;
 
 	.gdpr-footer__link {
@@ -338,7 +322,7 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 	}
 
 	@media @mobile {
-		width: 300px;
+		width: @nav-width-mobile;
 	}
 }
 
@@ -430,21 +414,6 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 	@media @mobile {
 		padding: 20px;
 	}
-}
-
-#main {
-	display: block;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    .border-radius(0px);
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 .bk-pt-home #main .widget.feature.bk-tpl-hidden + .bk-header {
