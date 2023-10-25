@@ -52,10 +52,11 @@ body {
 	flex-wrap: nowrap;
 	margin-left: 0;
 	transition: all .5s ease;
-	width: calc(100% + @nav-width);
+	width: ~'calc(100% + @{nav-width})';
 
 	@media @mobile {
 		width: calc(100% + @nav-width-mobile);
+		width: ~'calc(100% + @{nav-width-mobile})';
 	}
 
 	&.menu-active {
