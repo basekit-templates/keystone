@@ -44,10 +44,12 @@
 body {
 	 background: @color-swatch1;
 	 overflow-x: hidden;
+	 position: relative;
 	 width: 100%;
 }
 
-#wrap {
+#wrap,
+.bk-pt-home {
 	display: flex;
 	flex-wrap: nowrap;
 	margin-left: 0;
@@ -55,17 +57,21 @@ body {
 	width: ~'calc(100% + @{nav-width})';
 
 	@media @mobile {
-		width: calc(100% + @nav-width-mobile);
 		width: ~'calc(100% + @{nav-width-mobile})';
 	}
+}
 
-	&.menu-active {
-		margin-left: -@nav-width;
+#wrap.menu-active,
+.menu-active .bk-pt-home {
+	margin-left: -@nav-width;
 
-		@media @mobile {
-			margin-left: -@nav-width-mobile;
-		}
+	@media @mobile {
+		margin-left: -@nav-width-mobile;
 	}
+}
+
+#main {
+	width: 100%;
 }
 
 .bk-pt-home {
@@ -163,7 +169,7 @@ body {
 	}
 
     @media @mobile {
-    	right: -@nav-width-mobile;
+		min-width: @nav-width-mobile;
     	width: @nav-width-mobile;
     }
 
@@ -173,6 +179,13 @@ body {
     	margin: 0;
     	width: 100%;
     }
+}
+
+.menu-active .bk-nav {
+	@media @mobile {
+		min-width: 80vw;
+		max-width: 80vw;
+	}
 }
 
 .widget.extendednavigation {
@@ -268,7 +281,7 @@ body {
 		outline: none;
 		.transition( all, 0.5s, ease);
 	    @media @mobile {
-	    	right: 312px;
+			left: -48px;
 	    	top: 12px;
 	    }
 	    &:hover {
@@ -312,7 +325,7 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 .menu-active + .gdpr-footer {
 	bottom: 0;
 	display: block;
-	position: absolute;
+	position: fixed;
 	right: 0;
 	width: @nav-width;
 	z-index: 10000;
@@ -332,7 +345,7 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 
 .widget.feature {
 	border-right: 1px solid darken(@color-swatch6, 50%);
-	height: 100%;
+	height: 100vh;
 }
 
 .widget.feature .feature-bgimg {
