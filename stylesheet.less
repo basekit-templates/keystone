@@ -27,6 +27,7 @@
 	width: 100%;
 }
 
+
 .edit .bk-nav {
 	position: absolute;
     right: -320px;
@@ -52,9 +53,17 @@
 
 /* 3. Header & Navigation */
 
+html,
+body {
+	overflow-x: hidden;
+}
+
+html.menu-active {
+	overflow-x: visible;
+}
+
 body {
 	 background: @color-swatch1;
-	 overflow-x: hidden;
 	 position: relative;
 	 width: 100%;
 }
@@ -72,7 +81,7 @@ body {
 	}
 }
 
-#wrap.menu-active,
+.menu-active #wrap,
 .menu-active .bk-pt-home {
 	margin-left: -@nav-width;
 
@@ -193,11 +202,14 @@ body {
 }
 
 .menu-active .bk-nav {
+	overflow: scroll;
+
 	@media @mobile {
 		min-width: 80vw;
 		max-width: 80vw;
 	}
 }
+
 
 .widget.extendednavigation {
 	background: @color-swatch3;
@@ -280,8 +292,8 @@ body {
 
     }
 	a.pull {
-		position: absolute;
-		right: 345px;
+		position: fixed;
+		right: 30px;
 		top: 30px;
 		display: inline-block;
 		width: 42px;
@@ -291,7 +303,7 @@ body {
 		outline: none;
 		.transition( all, 0.5s, ease);
 	    @media @mobile {
-			left: -48px;
+			right: 20px;
 	    	top: 12px;
 	    }
 	    &:hover {
@@ -313,6 +325,14 @@ body {
 	}
 	.bk-overlay {
 		width: 100%;
+	}
+}
+
+.menu-active .widget.extendednavigation a.pull {
+	right: 345px;
+
+	@media @mobile {
+		right: 320px;
 	}
 }
 

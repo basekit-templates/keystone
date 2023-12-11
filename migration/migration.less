@@ -14,6 +14,14 @@
             display: none;
           }
         }
+
+        .row--width-no-padding .widget-overlay:hover,
+        .row--width-no-padding .widget-overlay.hover {
+          bottom: 16px;
+          left: 16px;
+          right: 16px;
+          top: 16px;
+        }
         
         [data-widget-type="feature"] {
           z-index: 1;
@@ -35,16 +43,6 @@
           top: 28px;
           width: 50px;
 
-          @media only screen and (min-width: @editor-desktop-breakpoint) {
-            right: 445px;
-            top: 30px;
-          }
-
-          @media @mobile {
-            right: 272px;
-            top: 18px;
-          }
-
           .widget__item--visibility {
             right: -15px;
             top: -15px;
@@ -52,10 +50,8 @@
         }
 
         .extendednavigation a.pull {
-          right: 345px;
-
-          @media @mobile {
-            right: 275px;
+          @media only screen and (min-width: @editor-desktop-breakpoint) {
+            right: 130px;
           }
         }
 
