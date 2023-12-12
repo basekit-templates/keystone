@@ -7,6 +7,7 @@
     @editor-desktop-breakpoint: 930px;
 
     &.edit {
+      overflow: visible;
       
         &.row-editing,
         &.is-move-mode {
@@ -22,6 +23,11 @@
           right: 16px;
           top: 16px;
         }
+
+        #wrap,
+        .bk-pt-home {
+          overflow: visible;
+        }
         
         [data-widget-type="feature"] {
           z-index: 1;
@@ -32,14 +38,13 @@
         }
 
         .bk-nav {
-          background: transparent;
           z-index: 3;
         }
 
         [data-widget-type="extendednavigation"] .widget-overlay {
           height: 40px;
           left: initial;
-          right: 340px;
+          right: 450px;
           top: 28px;
           width: 50px;
 
